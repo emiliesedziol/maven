@@ -3,6 +3,7 @@ package APITesting.com.org.api;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 
 import static com.jayway.restassured.RestAssured.*; // static is used so anobject doesn't need to be created
@@ -11,13 +12,14 @@ public class WeatherGetRequests {
 	
 	// get request - get weather request by city name
 	// status code 200
-	/*@Test
+	@Test
 	public void Test_01() {
 		
 		Response resp = when().		
 				get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f66ba0146d2079315aad40e33fe1af62");
 		
-		System.out.println(resp.getStatusCode());
+		System.out.println(resp.getStatusCode() + " Test_01");
+		
 		Assert.assertEquals(resp.getStatusCode(), 200);
 	}
 	
@@ -28,10 +30,10 @@ public class WeatherGetRequests {
 			Response resp = when().		
 					get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f66ba0146d2079315aad40e33fe1af61");
 			
-			System.out.println(resp.getStatusCode());// the last character of the appid was changed
+			System.out.println(resp.getStatusCode() + " Test_02");// the last character of the appid was changed
 			Assert.assertEquals(resp.getStatusCode(), 401);
 		}
-*/
+
 	// how to use parameters with rest
 	@Test
 	public void Test_03() {
@@ -42,15 +44,15 @@ public class WeatherGetRequests {
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		
-		System.out.println(resp.getStatusCode());
+		System.out.println(resp.getStatusCode() + " Test_03");
 		Assert.assertEquals(resp.getStatusCode(), 200);
 		
 		if (resp.getStatusCode()==200) {
-			System.out.println("API is working");
+			System.out.println("API is working Test_03");
 		} 
 		else {
-			System.out.println("Problem with API, should have returned a 200");
-			System.out.println("resp.getStatusCode() " + resp.getStatusCode());
+			System.out.println("Problem with API, should have returned a 200" + " Test_03");
+			System.out.println("resp.getStatusCode() " + resp.getStatusCode()+ " Test_03");
 		}
 	}
 	
@@ -75,7 +77,7 @@ public class WeatherGetRequests {
 				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
-		System.out.println(resp.asString());  // data is returned in a json format
+		System.out.println(resp.asString() + " Test_05");  // data is returned in a json format
 	}
 	
 	@Test
@@ -86,7 +88,7 @@ public class WeatherGetRequests {
 				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
-		System.out.println(resp.asString());  
+		System.out.println(resp.asString() + " Test_06");  
 		Assert.assertEquals(resp.getStatusCode(), 200);
 	}
 	@Test
@@ -97,7 +99,7 @@ public class WeatherGetRequests {
 				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
-		System.out.println(resp.asString());  
+		System.out.println(resp.asString() + " Test_06a");  
 		Assert.assertEquals(resp.getStatusCode(), 200);
 	}
 	/*
@@ -139,4 +141,94 @@ public class WeatherGetRequests {
 	* $.store.book[?(@.price>15)]				--> all books with a price greater then 15
 	* 
 	* */
+	
+	@Test
+	public void Test_08() {
+		
+		String weatherReport = given().
+				param("id", "2172797").
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
+				when().		
+				get("http://api.openweathermap.org/data/2.5/weather").
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("weather[0].description");
+		System.out.println("weather report: " + weatherReport + " Test_08");  
+		
+	}
+	
+	@Test
+	public void Test_09() {
+		
+		Response resp = given().
+				param("id", "2172797").
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
+				when().		
+				get("http://api.openweathermap.org/data/2.5/weather");
+		String actualWeatherReport = resp.
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("weather[0].description");
+		
+		String expectedWeatherReport = null;
+		
+		if (actualWeatherReport.equalsIgnoreCase(expectedWeatherReport)) {
+			System.out.println(" found weahter report test09");
+		}
+		else {
+			System.out.println("expected weather report not found test 09");
+		}
+		
+	}
+	
+	@Test
+	public void test_10() {
+		
+		Response resp = given().
+				param("id", "2172797").
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
+				when().		
+				get("http://api.openweathermap.org/data/2.5/weather");
+		
+		String reportId = resp.
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("weather[0].description");
+		
+		System.out.println("weather description id " + reportId + " test 10");
+		
+		String lon = String.valueOf(resp.
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("coord.lon"));
+		
+		System.out.println("longitude is :" + lon);
+		
+		String lat = String.valueOf(resp.
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("coord.lat"));
+		
+		System.out.println("latitude is :" + lat);
+		
+		String reportbyCoordinates = given().
+				param("lat", lat).
+				param("lon", lon).
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
+				when().		
+				get("http://api.openweathermap.org/data/2.5/weather").
+				then().
+				contentType(ContentType.JSON).
+				extract().
+				path("weather[0].description");
+		
+		System.out.println("weather by coordinates " + reportbyCoordinates + " test_10");
+		
+		Assert.assertEquals(reportId, reportbyCoordinates);
+	}
 }
