@@ -100,4 +100,43 @@ public class WeatherGetRequests {
 		System.out.println(resp.asString());  
 		Assert.assertEquals(resp.getStatusCode(), 200);
 	}
+	/*
+	*  json data
+	*  {
+	*  		"store": {
+	*  			"book": [{
+	*  				"catagorie": "fiction",
+	*  				"author": "Herman Melville",
+	*  				"title": " Mobby Dick",
+	* 				"isbin": "123-334",
+	* 				"price": 10.99
+	* 			},
+	* 			{
+	* 				 "catagorie": "fiction",
+	*  				"author": "J. R. R. Tolken",
+	*  				"title": "The Hobbit",
+	* 				"isbin": "143-33",
+	* 				"price": 22.88			
+	* 			}],
+	* 		"Bicycle": {
+	* 			"color", "red",
+	* 			"price", 200.87
+	* 		}
+	* }
+	* 
+	* $..author					--> all books
+	* $.store.book[0].author	--> first author
+	* $.store.book[*].author	--> all authors
+	* $.store.book[1].author	--> second author
+	* $.store.book[0]			--> all details of the first book 
+	* $.store.book[0,1]			--> first and second book
+	* $.store.book				--> all books
+	* $.store.book[1:]			--> all books starting with the second book
+	* $.store.book[-1:]			--> last book
+	* $.store.book[?(@.isbin)]	--> '?' query '@isbin' get all with isbin
+	* 
+	* $.store.book[?(@.catagorie="reference)] --> all books with catagorie with 'reference'
+	* $.store.book[?(@.price>15)]				--> all books with a price greater then 15
+	* 
+	* */
 }

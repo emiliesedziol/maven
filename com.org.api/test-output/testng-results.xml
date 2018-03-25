@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2433" started-at="2018-03-24T19:01:42Z" finished-at="2018-03-24T19:01:45Z">
+  <suite name="Default suite" duration-ms="2525" started-at="2018-03-25T17:07:37Z" finished-at="2018-03-25T17:07:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2433" started-at="2018-03-24T19:01:42Z" finished-at="2018-03-24T19:01:45Z">
+    <test name="Default test" duration-ms="2525" started-at="2018-03-25T17:07:37Z" finished-at="2018-03-25T17:07:40Z">
       <class name="APITesting.com.org.api.WeatherGetRequests">
-        <test-method status="PASS" signature="Test_03()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_03" duration-ms="1907" started-at="2018-03-24T15:01:42Z" finished-at="2018-03-24T15:01:44Z">
+        <test-method status="PASS" signature="Test_03()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_03" duration-ms="1949" started-at="2018-03-25T13:07:37Z" finished-at="2018-03-25T13:07:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_03 -->
-        <test-method status="PASS" signature="Test_04()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_04" duration-ms="203" started-at="2018-03-24T15:01:44Z" finished-at="2018-03-24T15:01:44Z">
+        <test-method status="PASS" signature="Test_04()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_04" duration-ms="145" started-at="2018-03-25T13:07:39Z" finished-at="2018-03-25T13:07:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_04 -->
-        <test-method status="PASS" signature="Test_05()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_05" duration-ms="110" started-at="2018-03-24T15:01:44Z" finished-at="2018-03-24T15:01:44Z">
+        <test-method status="PASS" signature="Test_05()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_05" duration-ms="161" started-at="2018-03-25T13:07:39Z" finished-at="2018-03-25T13:07:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_05 -->
-        <test-method status="PASS" signature="Test_06()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_06" duration-ms="107" started-at="2018-03-24T15:01:44Z" finished-at="2018-03-24T15:01:45Z">
+        <test-method status="PASS" signature="Test_06()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_06" duration-ms="121" started-at="2018-03-25T13:07:39Z" finished-at="2018-03-25T13:07:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_06 -->
-        <test-method status="PASS" signature="Test_06a()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_06a" duration-ms="78" started-at="2018-03-24T15:01:45Z" finished-at="2018-03-24T15:01:45Z">
+        <test-method status="PASS" signature="Test_06a()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@724af044]" name="Test_06a" duration-ms="116" started-at="2018-03-25T13:07:40Z" finished-at="2018-03-25T13:07:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_06a -->
