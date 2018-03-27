@@ -1,53 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3596" started-at="2018-03-25T18:33:46Z" finished-at="2018-03-25T18:33:50Z">
+  <suite name="Default suite" duration-ms="1881" started-at="2018-03-27T16:36:40Z" finished-at="2018-03-27T16:36:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3596" started-at="2018-03-25T18:33:46Z" finished-at="2018-03-25T18:33:50Z">
-      <class name="APITesting.com.org.api.WeatherGetRequests">
-        <test-method status="PASS" signature="Test_01()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_01" duration-ms="1938" started-at="2018-03-25T14:33:46Z" finished-at="2018-03-25T14:33:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_01 -->
-        <test-method status="PASS" signature="Test_02()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_02" duration-ms="104" started-at="2018-03-25T14:33:48Z" finished-at="2018-03-25T14:33:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_02 -->
-        <test-method status="PASS" signature="Test_03()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_03" duration-ms="100" started-at="2018-03-25T14:33:48Z" finished-at="2018-03-25T14:33:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_03 -->
-        <test-method status="PASS" signature="Test_04()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_04" duration-ms="148" started-at="2018-03-25T14:33:48Z" finished-at="2018-03-25T14:33:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_04 -->
-        <test-method status="PASS" signature="Test_05()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_05" duration-ms="111" started-at="2018-03-25T14:33:49Z" finished-at="2018-03-25T14:33:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_05 -->
-        <test-method status="PASS" signature="Test_06()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_06" duration-ms="97" started-at="2018-03-25T14:33:49Z" finished-at="2018-03-25T14:33:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_06 -->
-        <test-method status="PASS" signature="Test_06a()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_06a" duration-ms="76" started-at="2018-03-25T14:33:49Z" finished-at="2018-03-25T14:33:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_06a -->
-        <test-method status="PASS" signature="Test_08()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_08" duration-ms="675" started-at="2018-03-25T14:33:49Z" finished-at="2018-03-25T14:33:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_08 -->
-        <test-method status="PASS" signature="Test_09()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="Test_09" duration-ms="85" started-at="2018-03-25T14:33:50Z" finished-at="2018-03-25T14:33:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_09 -->
-        <test-method status="PASS" signature="test_10()[pri:0, instance:APITesting.com.org.api.WeatherGetRequests@4678c730]" name="test_10" duration-ms="228" started-at="2018-03-25T14:33:50Z" finished-at="2018-03-25T14:33:50Z">
+    <test name="Default test" duration-ms="1881" started-at="2018-03-27T16:36:40Z" finished-at="2018-03-27T16:36:42Z">
+      <class name="APITesting.com.org.api.JasonServerRequests">
+        <test-method status="PASS" signature="test_10()[pri:0, instance:APITesting.com.org.api.JasonServerRequests@724af044]" name="test_10" duration-ms="1864" started-at="2018-03-27T12:36:40Z" finished-at="2018-03-27T12:36:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_10 -->
-      </class> <!-- APITesting.com.org.api.WeatherGetRequests -->
+      </class> <!-- APITesting.com.org.api.JasonServerRequests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -8,7 +8,7 @@ import com.jayway.restassured.response.Response;
 
 import static com.jayway.restassured.RestAssured.*; // static is used so anobject doesn't need to be created
 
-public class WeatherGetRequests {
+public class WeatherGetRequests2 {
 	
 	// get request - get weather request by city name
 	// status code 200
@@ -16,7 +16,7 @@ public class WeatherGetRequests {
 	public void Test_01() {
 		
 		Response resp = when().		
-				get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=****");
+				get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f66ba0146d2079315aad40e33fe1af62");
 		
 		System.out.println(resp.getStatusCode() + " Test_01");
 		
@@ -40,7 +40,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("q", "London").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		
@@ -62,7 +62,7 @@ public class WeatherGetRequests {
 		
 				given().
 				param("q", "London").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather").
 				then().
@@ -74,7 +74,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("q", "London").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		System.out.println(resp.asString() + " Test_05");  // data is returned in a json format
@@ -85,7 +85,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("id", "2172797").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		System.out.println(resp.asString() + " Test_06");  
@@ -96,7 +96,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("zip", "45202,us").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		System.out.println(resp.asString() + " Test_06a");  
@@ -147,7 +147,7 @@ public class WeatherGetRequests {
 		
 		String weatherReport = given().
 				param("id", "2172797").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather").
 				then().
@@ -163,7 +163,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("id", "2172797").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		String actualWeatherReport = resp.
@@ -188,7 +188,7 @@ public class WeatherGetRequests {
 		
 		Response resp = given().
 				param("id", "2172797").
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather");
 		
@@ -219,7 +219,7 @@ public class WeatherGetRequests {
 		String reportbyCoordinates = given().
 				param("lat", lat).
 				param("lon", lon).
-				param("appid", "****").	
+				param("appid", "f66ba0146d2079315aad40e33fe1af62").	
 				when().		
 				get("http://api.openweathermap.org/data/2.5/weather").
 				then().
@@ -230,6 +230,5 @@ public class WeatherGetRequests {
 		System.out.println("weather by coordinates " + reportbyCoordinates + " test_10");
 		
 		Assert.assertEquals(reportId, reportbyCoordinates);
-		// need to push to github
 	}
 }
